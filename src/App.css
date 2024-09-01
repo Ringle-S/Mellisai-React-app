@@ -1,0 +1,185 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(7, 0, 18);
+  background: radial-gradient(
+    circle,
+    rgba(7, 0, 18, 1) 0%,
+    rgba(35, 0, 68, 1) 100%
+  );
+}
+
+.align-center {
+  align-items: center;
+}
+.menu-list {
+  padding: 0% 0px;
+}
+.menu-list > li {
+  border-bottom: 1px solid rgb(55, 43, 66);
+  transition: all 100ms ease-in;
+}
+
+.menu-list > .last-list {
+  border-bottom: 0px;
+}
+.resize-ico {
+  right: -37px;
+  cursor: pointer;
+}
+.logosm {
+  width: 80px;
+}
+.sidebar {
+  transition: all 100ms ease-in;
+}
+.banner {
+  height: 80vh;
+}
+.footer {
+  background-image: url("./assets/footer-back-1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.68);
+}
+.card {
+  /* Card styles */
+  position: relative; /* Needed for overlay positioning */
+  overflow: hidden; /* Prevent content from overflowing the card */
+}
+
+.card-content {
+  /* Card content styles */
+  padding: 1rem;
+}
+#playBtn {
+  top: 45%;
+  left: 45%;
+}
+
+.card-overlay {
+  /* Overlay styles */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 81%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  color: #fff; /* White text */
+  display: none; /* Initially hidden */
+  opacity: 0; /* Initial opacity for smooth transition */
+  transition: opacity 0.2s ease-in-out; /* Add a smooth opacity transition */
+}
+
+.card-overlay-2 {
+  /* Overlay styles */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 87%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  color: #fff; /* White text */
+  display: none; /* Initially hidden */
+  opacity: 0; /* Initial opacity for smooth transition */
+  transition: opacity 0.2s ease-in-out; /* Add a smooth opacity transition */
+}
+.song-card:hover .card-overlay-2 {
+  /* Show overlay on hover */
+  display: block;
+  opacity: 1; /* Full opacity when hovered */
+}
+.song-card:hover .card-overlay {
+  /* Show overlay on hover */
+  display: block;
+  opacity: 1; /* Full opacity when hovered */
+}
+.text-container {
+  /* Container styles (optional) */
+  display: inline-block;
+  overflow: hidden; /* Hide overflow */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+marquee {
+  /* Marquee styles (optional) */
+  animation: marquee 15s linear infinite; /* Add animation if needed */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Adjust movement distance */
+  }
+}
+
+.subscription-plan {
+  background-image: url("./assets/musid.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.766);
+}
+
+@media only screen and (min-width: 1981px) and (max-width: 2600px) {
+  .card-overlay {
+    width: 100%;
+    height: 85%;
+  }
+  .card-overlay-2 {
+    width: 81%;
+    height: 100%;
+  }
+  #playBtn {
+    top: 45% !important;
+    left: 45% !important;
+  }
+}
+@media only screen and (min-width: 1440px) and (max-width: 1980px) {
+  .card-overlay {
+    width: 100%;
+    height: 80%;
+  }
+  .card-overlay-2 {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .card-overlay {
+    width: 100%;
+    height: 80%;
+  }
+  .card-overlay-2 {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .card-overlay {
+    width: 100%;
+    height: 82%;
+  }
+  .card-overlay-2 {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 380px) and (max-width: 767px) {
+  .card-overlay {
+    width: 100%;
+    height: 85%;
+  }
+  .card-overlay-2 {
+    width: 90%;
+    height: 100%;
+  }
+}

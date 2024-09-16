@@ -38,6 +38,10 @@ export const Playlist = () => {
             slidesPerView={1}
             spaceBetween={10}
             breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
               640: {
                 slidesPerView: 2,
                 spaceBetween: 20,
@@ -47,6 +51,10 @@ export const Playlist = () => {
                 spaceBetween: 40,
               },
               1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+              1440: {
                 slidesPerView: 5,
                 spaceBetween: 50,
               },

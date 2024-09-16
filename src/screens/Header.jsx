@@ -41,7 +41,7 @@ export default function Header() {
 
   const filterData = () => {
     const filteredNames = songData.filter((name) =>
-      name.artist.toLowerCase().includes(searchText.toLowerCase())
+      name.title.toLowerCase().includes(searchText.toLowerCase())
     );
     setSearchResults(filteredNames);
     console.log(searchResults);
@@ -124,8 +124,8 @@ export default function Header() {
               >
                 <img className="w-14 h-14" src={item.picture} alt="" />
                 <div className="flex flex-col">
-                  <span className="text-lg"> {item.artist}</span>
-                  <span className="text-sm text-gray-400"> {item.album}</span>
+                  <span className="text-lg"> {item.title}</span>
+                  <span className="text-sm text-gray-400"> {item.artist}</span>
                 </div>
               </li>
             ))}

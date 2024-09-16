@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import { GrClose } from "react-icons/gr";
-import { Checkbox } from "primereact/checkbox";
+
 export const LanguageModal = ({ onClose }) => {
-  const [language, setLanguage] = useState([]);
+  // const [language, setLanguage] = useState([]);
   const modalRef = useRef();
 
   const closeModal = (e) => {
@@ -11,14 +11,14 @@ export const LanguageModal = ({ onClose }) => {
     }
   };
 
-  const onlanguageChange = (e) => {
-    let _languages = [...language];
+  // const onlanguageChange = (e) => {
+  //   let _languages = [...language];
 
-    if (e.checked) _ingredients.push(e.value);
-    else _languages.splice(_languages.indexOf(e.value), 1);
+  //   if (e.checked) _ingredients.push(e.value);
+  //   else _languages.splice(_languages.indexOf(e.value), 1);
 
-    setLanguage(_languages);
-  };
+  //   setLanguage(_languages);
+  // };
 
   return (
     <div className="w-full h-screen  absolute z-50">
@@ -42,48 +42,44 @@ export const LanguageModal = ({ onClose }) => {
           <div className="w-full flex justify-evenly mt-6">
             <div className="card flex flex-col flex-wrap justify-content-center gap-3 text-lg ">
               <div className="flex align-items-center">
-                <Checkbox
+                <input
+                  type="checkbox"
                   inputId="language1"
                   name="pizza"
                   value="English"
-                  onChange={onlanguageChange}
-                  checked={language.includes("English")}
                 />
                 <label htmlFor="language1" className="ml-2">
                   English
                 </label>
               </div>
               <div className="flex align-items-center">
-                <Checkbox
+                <input
+                  type="checkbox"
                   inputId="language2"
                   name="pizza"
                   value="Tamil"
-                  onChange={onlanguageChange}
-                  checked={language.includes("Tamil")}
                 />
                 <label htmlFor="language2" className="ml-2">
                   Tamil
                 </label>
               </div>
               <div className="flex align-items-center">
-                <Checkbox
+                <input
+                  type="checkbox"
                   inputId="language3"
                   name="pizza"
                   value="Malayalam"
-                  onChange={onlanguageChange}
-                  checked={language.includes("Malayalam")}
                 />
                 <label htmlFor="language3" className="ml-2">
                   Malayalam
                 </label>
               </div>
               <div className="flex align-items-center">
-                <Checkbox
+                <input
+                  type="checkbox"
                   inputId="language4"
                   name="pizza"
                   value="Hindi"
-                  onChange={onlanguageChange}
-                  checked={language.includes("Hindi")}
                 />
                 <label htmlFor="language4" className="ml-2">
                   Hindi
@@ -92,48 +88,44 @@ export const LanguageModal = ({ onClose }) => {
             </div>
             <div className="card flex flex-col flex-wrap justify-content-center gap-3 text-lg ">
               <div className="flex align-items-center">
-                <Checkbox
+                <input
+                  type="checkbox"
                   inputId="language5"
                   name="pizza"
                   value="Chinese"
-                  onChange={onlanguageChange}
-                  checked={language.includes("Chinese")}
                 />
                 <label htmlFor="language5" className="ml-2">
                   Chinese
                 </label>
               </div>
               <div className="flex align-items-center">
-                <Checkbox
+                <input
+                  type="checkbox"
                   inputId="language6"
                   name="pizza"
                   value="Japanese"
-                  onChange={onlanguageChange}
-                  checked={language.includes("Japanese")}
                 />
                 <label htmlFor="language6" className="ml-2">
                   Japanese
                 </label>
               </div>
               <div className="flex align-items-center">
-                <Checkbox
+                <input
+                  type="checkbox"
                   inputId="language7"
                   name="pizza"
                   value="Spanish"
-                  onChange={onlanguageChange}
-                  checked={language.includes("Spanish")}
                 />
                 <label htmlFor="language7" className="ml-2">
                   Spanish
                 </label>
               </div>
               <div className="flex align-items-center">
-                <Checkbox
+                <input
+                  type="checkbox"
                   inputId="language8"
                   name="pizza"
                   value="German"
-                  onChange={onlanguageChange}
-                  checked={language.includes("German")}
                 />
                 <label htmlFor="language8" className="ml-2">
                   German

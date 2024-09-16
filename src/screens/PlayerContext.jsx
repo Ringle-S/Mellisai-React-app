@@ -1,5 +1,5 @@
 import { createContext, useEffect, useRef, useState } from "react";
-
+import preData from "../assets/PlaylistExport.json";
 export const PlayerContext = createContext();
 
 const songData = [
@@ -72,20 +72,20 @@ const PlayerContextProvider = (props) => {
     audio.play();
   };
   const playWithid = async (id) => {
-    await setTrack(songData[id - 1]);
-    await audioRef.current.play();
+    setTrack(songData[id - 1]);
+    audioRef.current.play();
     setPlayStatus(true);
   };
 
   const prevBtn = async () => {
     console.log(parseInt(track.id));
     if (parseInt(track.id) > 1) {
-      await setTrack(songData[parseInt(track.id) - 1]);
-      await audioRef.current.play();
+      setTrack(songData[parseInt(track.id) - 1]);
+      audioRef.current.play();
       setPlayStatus(true);
     } else if (parseInt(track.id) >= 1) {
-      await setTrack(songData[5]);
-      await audioRef.current.play();
+      setTrack(songData[5]);
+      audioRef.current.play();
       setPlayStatus(true);
     }
   };
@@ -93,12 +93,12 @@ const PlayerContextProvider = (props) => {
   const nextBtn = async () => {
     console.log(parseInt(track.id));
     if (parseInt(track.id) < 5) {
-      await setTrack(songData[parseInt(track.id) + 1]);
-      await audioRef.current.play();
+      setTrack(songData[parseInt(track.id) + 1]);
+      audioRef.current.play();
       setPlayStatus(true);
     } else if (parseInt(track.id) === 5) {
-      await setTrack(songData[0]);
-      await audioRef.current.play();
+      setTrack(songData[0]);
+      audioRef.current.play();
       setPlayStatus(true);
     }
   };

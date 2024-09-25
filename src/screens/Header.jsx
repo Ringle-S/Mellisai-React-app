@@ -80,7 +80,7 @@ export default function Header() {
             placeholder="Search"
           />
         </div>
-        <h3 className="text-white hidden xl:block 2xl:text-lg lg:text-sm">
+        <h3 className="text-white hidden 2xl:block 2xl:text-lg lg:text-sm">
           <b className="text-purple-400 ">Trending Songs: </b>Dream your
           moments, Until I Met You, Dark Alley (+8 More)
         </h3>
@@ -115,7 +115,7 @@ export default function Header() {
       </nav>
       {shownav ? <Mobilenav /> : ""}
       {searchText && (
-        <div className="search-result   bg-black w-1/4 h-auto overflow-y-auto left-10 z-50 absolute border-2 rounded-xl border-purple-700 text-gray-300 px-8 py-5">
+        <div className="search-result  bg-black lg:w-1/3 xl:w-1/4 h-auto overflow-y-auto left-1/4 md:left-1/3 lg:left-10 z-50 absolute border-2 rounded-xl border-purple-700 text-gray-300 px-8 py-5">
           <ul>
             {searchResults.map((item) => (
               <li

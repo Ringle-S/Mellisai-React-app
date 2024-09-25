@@ -124,7 +124,7 @@ export default function Explore() {
             className="banner object-cover w-full "
             alt=""
           />
-          <div className="card-content absolute left-0 top-48 lg:left-32 lg:top-96 text-white w-3/4 flex flex-col lg:flex-row lg:justify-between ">
+          <div className="card-content absolute left-0 top-80 md:left-0 md:top-80 lg:left-32 lg:top-96 text-white w-3/4 flex flex-col lg:flex-row lg:justify-between ">
             <div className="left-cont flex flex-col gap-4">
               <h1 className="text-3xl lg:text-6xl w-68 lg:w-96 font-semibold transition duration-300 ease-in-out">
                 {bannerData[banner].title}
@@ -169,19 +169,19 @@ export default function Explore() {
             spaceBetween={10}
             breakpoints={{
               320: {
-                slidesPerView: 1,
+                slidesPerView: 2,
                 spaceBetween: 20,
               },
               640: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 40,
               },
               1024: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 50,
               },
               1440: {
@@ -199,6 +199,28 @@ export default function Explore() {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
+                {opHovered && (
+                  <ul className="absolute hidden xl:flex z-50 left-0 lg:left-5  xl:left-0 2xl:left-5 option-list bg-slate-300 text-gray-600 xl:w-5/6 2xl:w-4/6 rounded-lg  flex-col py-3 px-1">
+                    <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                      <GrFavorite />
+                      Add to Favorite
+                    </li>
+                    <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                      <MdOutlineQueue />
+                      Add to Queue
+                    </li>
+                    <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                      <CiSaveDown1 /> Download
+                    </li>
+                    <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                      <TbPlaylistAdd /> Add to Playlist
+                    </li>
+                    <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                      <CiShare2 />
+                      Share
+                    </li>
+                  </ul>
+                )}
                 <img src={data.artwork} className="  rounded-xl " alt="" />
                 <h4 className="text-lg mt-4">{data.title}</h4>
                 <p className="text-md  text-gray-200">{data.artist}</p>
@@ -210,28 +232,6 @@ export default function Explore() {
                       onClick={handleMouseEnterOption}
                       className=" float-right font-semibold text-3xl cursor-pointer"
                     />
-                    {opHovered && (
-                      <ul className="absolute left-6 option-list bg-slate-300 text-gray-600 w-3/4 rounded-lg flex flex-col py-3 px-1">
-                        <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                          <GrFavorite />
-                          Add to Favorite
-                        </li>
-                        <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                          <MdOutlineQueue />
-                          Add to Queue
-                        </li>
-                        <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                          <CiSaveDown1 /> Download
-                        </li>
-                        <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                          <TbPlaylistAdd /> Add to Playlist
-                        </li>
-                        <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                          <CiShare2 />
-                          Share
-                        </li>
-                      </ul>
-                    )}
                   </div>
                 )}
               </SwiperSlide>
@@ -241,12 +241,12 @@ export default function Explore() {
         {/* {Top 15} */}
         <div className="top-weekly mt-14 px-2 md:px-8 text-white">
           <h1 className="text-2xl font-semibold mb-4">Weekly Top 15</h1>
-          <div className="music-grid flex flex-col lg:flex-row flex-wrap">
+          <div className="music-grid flex flex-col lg:flex-row flex-wrap md:px-24 lg:px-0">
             {musicData.map(
               (mdata, index) =>
                 index < 15 && (
-                  <div className="card flex flex-col w-3/3 lg:w-1/3  align-top relative text-white hover:text-purple-500 justify-between px-4 py-2 cursor-pointer">
-                    <div className="flex">
+                  <div className="card flex flex-col w-3/3 md:w-3/3 lg:w-2/4 xl:w-2/4 2xl:w-1/3 align-top relative text-white hover:text-purple-500 justify-between px-4 py-2 cursor-pointer">
+                    <div className="flex gap-3">
                       <h2 className="text-5xl font-bold w-2/12">{index + 1}</h2>
                       <div className="w-2/12 flex justify-center align-center">
                         <img className="w-14 h-14" src={mdata.picture} alt="" />
@@ -282,19 +282,19 @@ export default function Explore() {
             spaceBetween={10}
             breakpoints={{
               320: {
-                slidesPerView: 1,
+                slidesPerView: 2,
                 spaceBetween: 20,
               },
               640: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 40,
               },
               1024: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 50,
               },
               1440: {
@@ -313,6 +313,28 @@ export default function Explore() {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
+                    {opHovered && (
+                      <ul className="absolute hidden xl:hidden z-50 left-0 lg:left-5  xl:left-0 2xl:left-5 option-list bg-slate-300 text-gray-600 xl:w-5/6 2xl:w-4/6 rounded-lg  flex-col py-3 px-1">
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <GrFavorite />
+                          Add to Favorite
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <MdOutlineQueue />
+                          Add to Queue
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <CiSaveDown1 /> Download
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <TbPlaylistAdd /> Add to Playlist
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <CiShare2 />
+                          Share
+                        </li>
+                      </ul>
+                    )}
                     <div className="card song-card">
                       <img
                         src={mdata.picture}
@@ -331,28 +353,6 @@ export default function Explore() {
                             onClick={handleMouseEnterOption}
                             className=" float-right font-semibold text-3xl cursor-pointer"
                           />
-                          {opHovered && (
-                            <ul className="absolute left-10 option-list bg-slate-300 text-gray-600 w-4/6 rounded-lg flex flex-col py-3 px-1">
-                              <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                                <GrFavorite />
-                                Add to Favorite
-                              </li>
-                              <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                                <MdOutlineQueue />
-                                Add to Queue
-                              </li>
-                              <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                                <CiSaveDown1 /> Download
-                              </li>
-                              <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                                <TbPlaylistAdd /> Add to Playlist
-                              </li>
-                              <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                                <CiShare2 />
-                                Share
-                              </li>
-                            </ul>
-                          )}
                         </div>
                       )}
                     </div>

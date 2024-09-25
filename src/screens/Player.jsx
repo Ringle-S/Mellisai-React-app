@@ -32,7 +32,7 @@ export const Player = () => {
 
   return (
     <div className="absolute bottom-0 z-10 w-full  h-[10%] bg-black">
-      <div className="flex justify-between items-center text-white px-8 pt-6">
+      <div className="flex justify-between items-center text-white md:px-8 pt-6">
         <div className="hidden lg:flex items-center gap-4">
           <img src={track.artwork} className="w-12" alt="" />
           <div>
@@ -78,7 +78,7 @@ export const Player = () => {
             </p>
           </div>
         </div>
-        <div className="hidden lg:flex items-center gap-2 opacity-75">
+        <div className="hidden xl:flex items-center gap-2 opacity-75">
           <AiOutlinePlaySquare className="w-4" />
           <FaMicrophone className="w-4" />
           <MdOutlineQueueMusic className="w-4" />

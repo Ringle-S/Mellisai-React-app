@@ -39,19 +39,19 @@ export const Playlist = () => {
             spaceBetween={10}
             breakpoints={{
               320: {
-                slidesPerView: 1,
+                slidesPerView: 2,
                 spaceBetween: 20,
               },
               640: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 2,
+                slidesPerView: 3,
                 spaceBetween: 40,
               },
               1024: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 50,
               },
               1440: {
@@ -66,49 +66,56 @@ export const Playlist = () => {
                 index < 3 && (
                   <SwiperSlide
                     id={mdata.id}
-                    className="card song-card overflow-hidden"
+                    className=" overflow-hidden"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <img src={mdata.picture} className="  rounded-xl " alt="" />
-                    <h4 className="text-lg mt-4">{mdata.album}</h4>
-                    <p className="text-md  text-gray-200">{mdata.artist}</p>
-                    {isHovered && (
-                      <div className="card-overlay-2 rounded-md p-4">
-                        <img
-                          id="playBtn"
-                          src={play}
-                          className="absolute"
-                          alt=""
-                        />
-                        <CiMenuKebab
-                          onClick={handleMouseEnterOption}
-                          className=" float-right font-semibold text-3xl cursor-pointer"
-                        />
-                        {opHovered && (
-                          <ul className="absolute left-10 option-list bg-slate-300 text-gray-600 w-4/6 rounded-lg flex flex-col py-3 px-1">
-                            <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                              <GrFavorite />
-                              Add to Favorite
-                            </li>
-                            <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                              <MdOutlineQueue />
-                              Add to Queue
-                            </li>
-                            <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                              <CiSaveDown1 /> Download
-                            </li>
-                            <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                              <TbPlaylistAdd /> Add to Playlist
-                            </li>
-                            <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                              <CiShare2 />
-                              Share
-                            </li>
-                          </ul>
-                        )}
-                      </div>
+                    {opHovered && (
+                      <ul className="absolute hidden xl:hidden z-50 left-0 lg:left-5  xl:left-0 2xl:left-5 option-list bg-slate-300 text-gray-600 xl:w-5/6 2xl:w-4/6 rounded-lg  flex-col py-3 px-1">
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <GrFavorite />
+                          Add to Favorite
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <MdOutlineQueue />
+                          Add to Queue
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <CiSaveDown1 /> Download
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <TbPlaylistAdd /> Add to Playlist
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <CiShare2 />
+                          Share
+                        </li>
+                      </ul>
                     )}
+                    <div className="card song-card">
+                      <img
+                        src={mdata.picture}
+                        className="  rounded-xl "
+                        alt=""
+                      />
+                      {isHovered && (
+                        <div className="card-overlay-2 rounded-md p-4">
+                          <img
+                            id="playBtn"
+                            src={play}
+                            className="absolute"
+                            alt=""
+                          />
+                          <CiMenuKebab
+                            onClick={handleMouseEnterOption}
+                            className=" float-right font-semibold text-3xl cursor-pointer"
+                          />
+                        </div>
+                      )}
+                    </div>
+                    <p className="text-lg mt-4  text-gray-200">
+                      {mdata.artist}
+                    </p>
                   </SwiperSlide>
                 )
             )}
@@ -140,49 +147,56 @@ export const Playlist = () => {
                 index < 10 && (
                   <SwiperSlide
                     id={mdata.id}
-                    className="card song-card overflow-hidden"
+                    className=" overflow-hidden"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <img src={mdata.picture} className="  rounded-xl " alt="" />
-                    <h4 className="text-lg mt-4">{mdata.album}</h4>
-                    <p className="text-md  text-gray-200">{mdata.artist}</p>
-                    {isHovered && (
-                      <div className="card-overlay-2 rounded-md p-4">
-                        <img
-                          id="playBtn"
-                          src={play}
-                          className="absolute"
-                          alt=""
-                        />
-                        <CiMenuKebab
-                          onClick={handleMouseEnterOption}
-                          className=" float-right font-semibold text-3xl cursor-pointer"
-                        />
-                        {opHovered && (
-                          <ul className="absolute left-10 option-list bg-slate-300 text-gray-600 w-4/6 rounded-lg flex flex-col py-3 px-1">
-                            <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                              <GrFavorite />
-                              Add to Favorite
-                            </li>
-                            <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                              <MdOutlineQueue />
-                              Add to Queue
-                            </li>
-                            <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                              <CiSaveDown1 /> Download
-                            </li>
-                            <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                              <TbPlaylistAdd /> Add to Playlist
-                            </li>
-                            <li className="flex text-md align-center gap-3 px-3 py-2 hover:bg-slate-400">
-                              <CiShare2 />
-                              Share
-                            </li>
-                          </ul>
-                        )}
-                      </div>
+                    {opHovered && (
+                      <ul className="absolute hidden xl:hidden z-50 left-0 lg:left-5  xl:left-0 2xl:left-5 option-list bg-slate-300 text-gray-600 xl:w-5/6 2xl:w-4/6 rounded-lg  flex-col py-3 px-1">
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <GrFavorite />
+                          Add to Favorite
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <MdOutlineQueue />
+                          Add to Queue
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <CiSaveDown1 /> Download
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <TbPlaylistAdd /> Add to Playlist
+                        </li>
+                        <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
+                          <CiShare2 />
+                          Share
+                        </li>
+                      </ul>
                     )}
+                    <div className="card song-card">
+                      <img
+                        src={mdata.picture}
+                        className="  rounded-xl "
+                        alt=""
+                      />
+                      {isHovered && (
+                        <div className="card-overlay-2 rounded-md p-4">
+                          <img
+                            id="playBtn"
+                            src={play}
+                            className="absolute"
+                            alt=""
+                          />
+                          <CiMenuKebab
+                            onClick={handleMouseEnterOption}
+                            className=" float-right font-semibold text-3xl cursor-pointer"
+                          />
+                        </div>
+                      )}
+                    </div>
+                    <p className="text-lg mt-4  text-gray-200">
+                      {mdata.artist}
+                    </p>
                   </SwiperSlide>
                 )
             )}

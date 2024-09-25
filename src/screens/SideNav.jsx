@@ -32,7 +32,7 @@ export const SideNav = () => {
         <div className="sidebar h-full w-2/12 lg:flex flex-col gap-6 hidden  bg-slate-950 border-e-2 border-purple-700 relative">
           <div
             onClick={() => setsizing((f) => !f)}
-            className="resize-ico bg-slate-950 flex flex-col justify-center text-2xl text-white absolute z-40 top-1/2 pl-0 p-3 border-y-2 border-e-2 rounded-tr-full rounded-br-full border-purple-700 transition delay-150 duration-300 ease-in-out "
+            className="resize-ico bg-slate-950 hidden 2xl:flex flex-col justify-center text-2xl text-white absolute z-40 top-1/2 pl-0 p-3 border-y-2 border-e-2 rounded-tr-full rounded-br-full border-purple-700 transition delay-150 duration-300 ease-in-out "
           >
             <IoChevronForward className=" transition delay-150 duration-300 ease-in-out  " />
           </div>

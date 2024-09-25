@@ -20,9 +20,9 @@ export default function Footer() {
 
   return (
     <>
-      <div className="footer w-full h-max mt-28 flex  flex-col px-10 md:px-36 lg:px-10 xl:px-14 py-20 text-white text-center lg:text-start">
-        <div className="flex flex-col lg:flex-row md:gap-8 lg:gap-8">
-          <div className="footer-logo w-full xl:1/4 flex flex-col items-center lg:items-start gap-4">
+      <div className="footer w-full h-max mt-28 flex  flex-col px-10  lg:px-10 xl:px-14 py-20 text-white text-center lg:text-start">
+        <div className="flex  flex-wrap xl:flex-nowrap items-center justify-center gap-8 lg:gap-8">
+          <div className="footer-logo w-4/4 md:w-1/2 xl:w-1/4 flex flex-col items-center lg:items-start gap-4">
             <h3 className="text-purple-500 text-lg">Mellissai Music Station</h3>
             <img className="w-1/2" src={logo} alt="" />
             <p>
@@ -30,27 +30,39 @@ export default function Footer() {
               founded on 23 April 2006 by Daniel Ek and Martin Lorentzon.
             </p>
           </div>
-          <div className="w-full xl:1/4 flex flex-col gap-4">
+          <div className="w-4/4 md:w-1/2 xl:w-1/4 flex flex-col gap-4">
             <h3 className="text-purple-500 text-lg">Download Our App</h3>
             <p>
               Go Mobile with our app. Listen to your favourite songs at just one
               click. Download Now !
             </p>
             <div className="w-full flex">
-              <div className="w-1/2 flex justify-center lg:justify-start">
+              <a
+                target="_blank"
+                href="https://play.google.com/store/myplayactivity"
+                className="w-1/2 flex justify-center lg:justify-start"
+              >
                 <img className="rounded-md" src={gplay} alt="" />
-              </div>
-              <div className="w-1/2 flex justify-center lg:justify-start">
+              </a>
+              <a
+                target="_blank"
+                href="https://answers.microsoft.com/en-us/windows"
+                className="w-1/2 flex justify-center lg:justify-start"
+              >
                 <img className="rounded-md" src={web} alt="" />
-              </div>
+              </a>
             </div>
             <div className="w-full flex">
-              <div className="w-1/2 flex justify-center lg:justify-start">
+              <a
+                target="_blank"
+                href="https://appstoreconnect.apple.com/login"
+                className="w-1/2 flex justify-center lg:justify-start"
+              >
                 <img className="rounded-md" src={appstore} alt="" />
-              </div>
+              </a>
             </div>
           </div>
-          <div className="w-full xl:1/4 flex flex-col items-center lg:items-start gap-4">
+          <div className="w-4/4 md:w-1/2 xl:w-1/4 flex flex-col items-center lg:items-start gap-4">
             <h3 className="text-purple-500 text-lg">Subscribe</h3>
             <p>
               Subscribe to our newsletter and get latest updates and offers.
@@ -89,7 +101,7 @@ export default function Footer() {
               onClick={validateEmail}
             />
           </div>
-          <div className="w-full xl:1/4 flex flex-col gap-4">
+          <div className="w-4/4 md:w-1/2 xl:w-1/4 flex flex-col gap-4">
             <h3 className="text-purple-500 text-lg">Contact Us</h3>
             <div className="w-full flex">
               <div className="w-1/5">

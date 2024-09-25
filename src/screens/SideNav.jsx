@@ -32,7 +32,7 @@ export const SideNav = () => {
         <div className="sidebar h-full w-2/12 lg:flex flex-col gap-6 hidden  bg-slate-950 border-e-2 border-purple-700 relative">
           <div
             onClick={() => setsizing((f) => !f)}
-            className="resize-ico bg-slate-950 hidden 2xl:flex flex-col justify-center text-2xl text-white absolute z-40 top-1/2 pl-0 p-3 border-y-2 border-e-2 rounded-tr-full rounded-br-full border-purple-700 transition delay-150 duration-300 ease-in-out "
+            className="resize-ico bg-slate-950 flex flex-col justify-center text-2xl text-white absolute z-40 top-1/2 pl-0 p-3 border-y-2 border-e-2 rounded-tr-full rounded-br-full border-purple-700 transition delay-150 duration-300 ease-in-out "
           >
             <IoChevronForward className=" transition delay-150 duration-300 ease-in-out  " />
           </div>
@@ -46,31 +46,31 @@ export const SideNav = () => {
             <ul className="menu-list text-white flex flex-col text-xl pt-11">
               <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="/">
-                  <MdExplore className=" mt-0 ml-3 lg:hidden xl:block" />
+                  <MdExplore className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Explore</p>
                 </NavLink>
               </li>
               <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="./Albums">
-                  <IoIosAlbums className=" mt-0 ml-3 lg:hidden xl:block" />
+                  <IoIosAlbums className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Albums</p>
                 </NavLink>
               </li>
               <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="./Artists">
-                  <FaArtstation className=" mt-0 ml-3 lg:hidden xl:block" />
+                  <FaArtstation className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Artists</p>
                 </NavLink>
               </li>
               <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-middle" to="./Genres">
-                  <GiRegeneration className=" mt-0 ml-3 lg:hidden xl:block" />
+                  <GiRegeneration className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Genres</p>
                 </NavLink>
               </li>
               <li className="last-list  p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="./Stations">
-                  <IoRadioSharp className=" mt-0 ml-3 lg:hidden xl:block" />
+                  <IoRadioSharp className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Stations</p>
                 </NavLink>
               </li>
@@ -78,7 +78,7 @@ export const SideNav = () => {
             <ul className="menu-list text-white flex flex-col text-xl pt-11">
               <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="/Downloads">
-                  <FaDownload className=" mt-1 ml-3 lg:hidden xl:block" />
+                  <FaDownload className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Downloads</p>
                 </NavLink>
               </li>
@@ -88,7 +88,7 @@ export const SideNav = () => {
                   className="flex  gap-5  align-center"
                   to="./Favourites"
                 >
-                  <MdFavorite className=" mt-1 ml-3 lg:hidden xl:block" />
+                  <MdFavorite className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Favourites</p>
                 </NavLink>
               </li>
@@ -96,7 +96,7 @@ export const SideNav = () => {
             <ul className="menu-list text-white flex flex-col text-xl pt-11">
               <li className="last-list  p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="./Playlist">
-                  <PiPlaylistFill className=" mt-1 ml-3 lg:hidden xl:block" />
+                  <PiPlaylistFill className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Playlist</p>
                 </NavLink>
               </li>
@@ -105,7 +105,7 @@ export const SideNav = () => {
         </div>
       )}
       {sizing && (
-        <div className="sidebar h-full w-1/12 flex flex-col gap-6 bg-slate-950 border-e-2 border-purple-700 relative">
+        <div className="sidebar h-full w-1/12 lg:flex flex-col gap-6 hidden bg-slate-950 border-e-2 border-purple-700 relative">
           <div
             onClick={() => setsizing((f) => !f)}
             className="resize-ico bg-slate-950 flex flex-col justify-center text-2xl text-white absolute z-40 top-1/2 pl-0 p-3 border-y-2 border-e-2 rounded-tr-full rounded-br-full border-purple-700 transition delay-150 duration-300 ease-in-out "
@@ -120,52 +120,52 @@ export const SideNav = () => {
               </NavLink>
             </div>
             <ul className="menu-list text-white flex flex-col text-lg pt-11">
-              <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="/">
-                  <MdExplore className=" mt-1 ml-10 text-2xl " />
+                  <MdExplore className="  text-2xl " />
                 </NavLink>
               </li>
-              <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="./Albums">
-                  <IoIosAlbums className=" mt-1 ml-10 text-2xl " />
+                  <IoIosAlbums className="  text-2xl " />
                 </NavLink>
               </li>
-              <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="./Artists">
-                  <FaArtstation className=" mt-1 ml-10 text-2xl " />
+                  <FaArtstation className="  text-2xl " />
                 </NavLink>
               </li>
-              <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-middle" to="./Genres">
-                  <GiRegeneration className=" mt-1 ml-10 text-2xl " />
+                  <GiRegeneration className="  text-2xl " />
                 </NavLink>
               </li>
-              <li className="last-list  p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li className="last-list  p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="./Stations">
-                  <IoRadioSharp className=" mt-1 ml-10 text-2xl " />
+                  <IoRadioSharp className="  text-2xl " />
                 </NavLink>
               </li>
             </ul>
             <ul className="menu-list text-white flex flex-col text-lg pt-11">
-              <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="/Downloads">
-                  <FaDownload className=" mt-1 ml-10 text-2x l" />
+                  <FaDownload className="  text-2x l" />
                 </NavLink>
               </li>
 
-              <li className="last-list p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li className="last-list p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink
                   className="flex  gap-5  align-center"
                   to="./Favourites"
                 >
-                  <MdFavorite className=" mt-1 ml-10 text-2xl " />
+                  <MdFavorite className="  text-2xl " />
                 </NavLink>
               </li>
             </ul>
             <ul className="menu-list text-white flex flex-col text-lg pt-11">
-              <li className="last-list  p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li className="last-list  p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
                 <NavLink className="flex  gap-5  align-center" to="./Playlist">
-                  <PiPlaylistFill className=" mt-1 ml-10 text-2xl " />
+                  <PiPlaylistFill className="  text-2xl " />
                 </NavLink>
               </li>
             </ul>

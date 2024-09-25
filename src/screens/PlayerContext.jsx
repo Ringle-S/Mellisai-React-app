@@ -65,45 +65,45 @@ const PlayerContextProvider = (props) => {
     },
   });
 
-  const loopPlay = async () => {
+  const loopPlay = () => {
     const audio = audioRef.current;
     audio.loop = true; // Set loop to true
     audio.src = audioSrc; // Set the audio source
     audio.play();
   };
   const playWithid = async (id) => {
-    setTrack(songData[id - 1]);
-    audioRef.current.play();
-    setPlayStatus(true);
+    await setTrack(songData[id - 1]);
+    await audioRef.current.play();
+    await setPlayStatus(true);
   };
 
   const prevBtn = async () => {
     console.log(parseInt(track.id));
     if (parseInt(track.id) > 1) {
-      setTrack(songData[parseInt(track.id) - 1]);
-      audioRef.current.play();
-      setPlayStatus(true);
+      await setTrack(songData[parseInt(track.id) - 1]);
+      await audioRef.current.play();
+      await setPlayStatus(true);
     } else if (parseInt(track.id) >= 1) {
-      setTrack(songData[5]);
-      audioRef.current.play();
-      setPlayStatus(true);
+      await setTrack(songData[5]);
+      await audioRef.current.play();
+      await setPlayStatus(true);
     }
   };
 
   const nextBtn = async () => {
     console.log(parseInt(track.id));
     if (parseInt(track.id) < 5) {
-      setTrack(songData[parseInt(track.id) + 1]);
-      audioRef.current.play();
-      setPlayStatus(true);
+      await setTrack(songData[parseInt(track.id) + 1]);
+      await audioRef.current.play();
+      await setPlayStatus(true);
     } else if (parseInt(track.id) === 5) {
-      setTrack(songData[0]);
-      audioRef.current.play();
-      setPlayStatus(true);
+      await setTrack(songData[0]);
+      await audioRef.current.play();
+      await setPlayStatus(true);
     }
   };
 
-  const songLenght = async (e) => {
+  const songLenght = (e) => {
     audioRef.current.currentTime =
       (e.nativeEvent.offsetX / lengthBg.current.offsetWidth) *
       audioRef.current.duration;

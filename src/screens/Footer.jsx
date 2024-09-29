@@ -146,7 +146,7 @@ export default function Footer() {
         </div>
         <div className="flex">
           <p className="text-white w-full w-4/4 text-center mt-2 mb-10">
-            mellisai@copyright 2024-2030
+            mellisai@copyright2024 All rights reserved
           </p>
         </div>
       </div>

@@ -144,7 +144,7 @@ export default function Explore() {
                     setBanner((prev) => (prev === 0 ? 0 : prev - 1));
                   }}
                   type="button"
-                  className="bg-black rounded-full border-e-4 hover:border-e-0 border-violet-600 p-2"
+                  className="bg-black rounded-full border-s-4 hover:border-s-transparent border-violet-600 p-2"
                 >
                   <FaChevronLeft className="text-2xl" />
                 </button>
@@ -153,7 +153,7 @@ export default function Explore() {
                     setBanner((next) => (next === 2 ? 2 : next + 1));
                   }}
                   type="button"
-                  className="bg-black rounded-full border-e-4 hover:border-e-0 border-violet-600 p-2"
+                  className="bg-black rounded-full border-e-4 hover:border-e-transparent border-violet-600 p-2"
                 >
                   <FaChevronRight className="text-2xl" />
                 </button>

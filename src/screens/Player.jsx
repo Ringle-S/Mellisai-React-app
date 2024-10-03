@@ -31,7 +31,7 @@ export const Player = () => {
   } = useContext(PlayerContext);
 
   return (
-    <div className="absolute bottom-0 z-10 w-full  h-[10%] bg-black">
+    <div className="absolute bottom-0 z-10 w-full  h-[10%] bg-black border-t-2 border-violet-700">
       <div className="flex justify-between items-center text-white md:px-8 pt-6">
         <div className="hidden lg:flex items-center gap-4">
           <img src={track.artwork} className="w-12" alt="" />

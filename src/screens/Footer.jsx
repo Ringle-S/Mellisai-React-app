@@ -20,7 +20,7 @@ export default function Footer() {
 
   return (
     <>
-      <div className="footer w-full h-max mt-28 flex  flex-col px-10  lg:px-10 xl:px-14 py-20 text-white text-center lg:text-start">
+      <div className="footer w-full h-max mt-28 flex  flex-col px-10  lg:px-10 xl:px-14 py-20  text-white text-center lg:text-start">
         <div className="flex  flex-wrap xl:flex-nowrap items-center justify-center gap-8 lg:gap-8">
           <div className="footer-logo w-4/4 md:w-1/2 xl:w-1/4 flex flex-col items-center lg:items-start gap-4">
             <h3 className="text-purple-500 text-lg">Mellissai Music Station</h3>

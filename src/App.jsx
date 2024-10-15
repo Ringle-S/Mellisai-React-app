@@ -26,7 +26,7 @@ export const App = () => {
           <MainContent></MainContent>
         </StrictMode>
         <Player />
-        <audio ref={audioRef} src={track.url} preload="auto"></audio>
+        <audio ref={audioRef} src={track.preview  } preload="auto"></audio>
       </div>
     </PrimeReactProvider>
   );

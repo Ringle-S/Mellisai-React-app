@@ -52,7 +52,7 @@ const PlayerContextProvider = (props) => {
   const lengthBg = useRef();
   const lengthBar = useRef();
 
-  const [track, setTrack] = useState(songData[0]);
+  const [track, setTrack] = useState(preData[0]);
   const [playStatus, setPlayStatus] = useState(false);
   const [time, setTime] = useState({
     currentTime: {
@@ -65,39 +65,44 @@ const PlayerContextProvider = (props) => {
     },
   });
 
-  const loopPlay = () => {
-    const audio = audioRef.current;
-    audio.loop = true; // Set loop to true
-    audio.src = audioSrc; // Set the audio source
-    audio.play();
-  };
+  // const loopPlay = () => {
+  //   const audio = audioRef.current;
+  //   audio.loop = true; // Set loop to true
+  //   audio.src = audioSrc; // Set the audio source
+  //   audio.play();
+  // };
   const playWithid = async (id) => {
-    await setTrack(songData[id - 1]);
+    console.log(parseInt(track.id));
+    await setTrack(preData[id - 1]);
     await audioRef.current.play();
     await setPlayStatus(true);
   };
 
   const prevBtn = async () => {
-    console.log(parseInt(track.id));
+    // console.log(track.id);
+
     if (parseInt(track.id) > 1) {
-      await setTrack(songData[parseInt(track.id) - 1]);
+      let previndex = track.id - 1;
+      await setTrack(preData[--previndex]);
       await audioRef.current.play();
       await setPlayStatus(true);
-    } else if (parseInt(track.id) >= 1) {
-      await setTrack(songData[5]);
+      console.log(previndex);
+    } else if (parseInt(track.id) < 1) {
+      await setTrack(preData[50]);
       await audioRef.current.play();
       await setPlayStatus(true);
     }
   };
 
   const nextBtn = async () => {
-    console.log(parseInt(track.id));
-    if (parseInt(track.id) < 5) {
-      await setTrack(songData[parseInt(track.id) + 1]);
+    console.log(preData[parseInt(track.id)]);
+    if (parseInt(track.id) < 50) {
+      // await setTrack(songData[parseInt(track.id) + 0]);
+      await setTrack(preData[parseInt(track.id)]);
       await audioRef.current.play();
       await setPlayStatus(true);
-    } else if (parseInt(track.id) === 5) {
-      await setTrack(songData[0]);
+    } else if (parseInt(track.id) === 50) {
+      await setTrack(preData[0]);
       await audioRef.current.play();
       await setPlayStatus(true);
     }

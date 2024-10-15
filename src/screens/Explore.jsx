@@ -191,7 +191,7 @@ export default function Explore() {
             }}
             className="mySwiper"
           >
-            {songData.map((data) => (
+            {musicData.map((data) => (
               <SwiperSlide
                 onClick={() => playWithid(data.id)}
                 id={data.id}
@@ -200,7 +200,7 @@ export default function Explore() {
                 onMouseLeave={handleMouseLeave}
               >
                 {opHovered && (
-                  <ul className="absolute hidden xl:flex z-50 left-0 lg:left-5  xl:left-0 2xl:left-5 option-list bg-slate-300 text-gray-600 xl:w-5/6 2xl:w-4/6 rounded-lg  flex-col py-3 px-1">
+                  <ul className="absolute hidden  z-50 left-0 lg:left-5  xl:left-0 2xl:left-5 option-list bg-slate-300 text-gray-600 xl:w-5/6 2xl:w-4/6 rounded-lg  flex-col py-3 px-1">
                     <li className="flex text-md align-center text-sm gap-3 px-3 py-2 hover:bg-slate-400">
                       <GrFavorite />
                       Add to Favorite
@@ -221,7 +221,7 @@ export default function Explore() {
                     </li>
                   </ul>
                 )}
-                <img src={data.artwork} className="  rounded-xl " alt="" />
+                <img src={data.picture} className="  rounded-xl " alt="" />
                 <h4 className="text-lg mt-4">{data.title}</h4>
                 <p className="text-md  text-gray-200">{data.artist}</p>
                 {isHovered && (
@@ -245,7 +245,10 @@ export default function Explore() {
             {musicData.map(
               (mdata, index) =>
                 index < 15 && (
-                  <div className="card flex flex-col w-3/3 md:w-3/3 lg:w-2/4 xl:w-2/4 2xl:w-1/3 align-top relative text-white hover:text-purple-500 justify-between px-4 py-2 cursor-pointer">
+                  <div
+                    onClick={() => playWithid(mdata.id)}
+                    className="card flex flex-col w-3/3 md:w-3/3 lg:w-2/4 xl:w-2/4 2xl:w-1/3 align-top relative text-white hover:text-purple-500 justify-between px-4 py-2 cursor-pointer"
+                  >
                     <div className="flex gap-3">
                       <h2 className="text-5xl font-bold w-2/12">{index + 1}</h2>
                       <div className="w-2/12 flex justify-center align-center">

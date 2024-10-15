@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import songData from "../assets/PlaylistExport.json";
 
 import { MdFavorite } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
+import { PlayerContext } from "./PlayerContext";
 
 export const Favourites = () => {
+  const { playWithid } = useContext(PlayerContext);
   const startIndex = 15;
   const slicedData = songData.slice(startIndex);
   function convertSecondsToTime(seconds) {
@@ -52,8 +54,9 @@ export const Favourites = () => {
                 (sData, index) =>
                   index < 15 && (
                     <tr
+                      onClick={() => playWithid(sData.id)}
                       id={sData.id}
-                      className="text-white hover:text-purple-500 cursor-pointer "
+                      className="text-white hover:text-purple-500 cursor-pointer d-flex items-center"
                     >
                       <td className="px-4 py-3 hidden md:block">{index + 1}</td>
                       <td className="px-4 py-3">{sData.title}</td>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import songData from "../assets/PlaylistExport.json";
@@ -16,8 +16,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import musicData from "../assets/PlaylistExport.json";
+import { PlayerContext } from "./PlayerContext";
 
 export const Downloads = () => {
+  const { playWithid } = useContext(PlayerContext);
   const [isHovered, setIsHovered] = useState(false);
   const [opHovered, setOpHovered] = useState(false);
 
@@ -71,6 +73,7 @@ export const Downloads = () => {
                 (sData, index) =>
                   index < 15 && (
                     <tr
+                      onClick={() => playWithid(sData.id)}
                       id={sData.id}
                       className="text-white hover:text-purple-500 cursor-pointer "
                     >

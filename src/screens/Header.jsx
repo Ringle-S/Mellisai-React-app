@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { RiSearch2Line } from "react-icons/ri";
 import { IoLanguage } from "react-icons/io5";
 import songData from "../assets/PlaylistExport.json";
@@ -12,28 +12,16 @@ import { NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import logosm from "../assets/logo-sm.png";
 import { Mobilenav } from "./Mobilenav";
+import { PlayerContext } from "./PlayerContext";
 
 export default function Header() {
+  const { playWithid } = useContext(PlayerContext);
   const [showModal, setShowModal] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
   const [showSignin, setshowSignin] = useState(false);
   const [shownav, setshowNav] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  // const [storeApi, setStoreApi] = useState({});
-  // const [view, setView] = useState(false);
-  // useEffect(() => {
-  //   try {
-  //     fetch(`https://saavn.dev/api/search?query= ${value}`)
-  //       .then((response) => response.json())
-  //       .then((json) => setStoreApi(json));
-  //     storeApi ? setView(true) : setView(false);
-  //   } catch (e) {
-  //     console.log(e);
-  //     console.log("have some error");
-  //   }
-  // }, [value]);
-  // let data = storeApi.data;
 
   const handleChange = (event) => {
     setSearchText(event.target.value.toLowerCase()); // Convert search text to lowercase for case-insensitive search
@@ -44,7 +32,7 @@ export default function Header() {
       name.title.toLowerCase().includes(searchText.toLowerCase())
     );
     setSearchResults(filteredNames);
-    console.log(searchResults);
+    // console.log(searchResults);
   };
 
   useEffect(() => {
@@ -119,6 +107,7 @@ export default function Header() {
           <ul>
             {searchResults.map((item) => (
               <li
+                onClick={() => playWithid(item.id)}
                 className="py-1 flex items-center justify-start gap-4 cursor-pointer"
                 key={item.id}
               >

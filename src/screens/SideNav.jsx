@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import logo from "../assets/Logo.png";
 import logosm from "../assets/logo-sm.png";
 import { MdExplore } from "react-icons/md";
@@ -15,17 +16,15 @@ import { IoChevronForward } from "react-icons/io5";
 export const SideNav = () => {
   const [sizing, setsizing] = useState(false);
 
-  // if (sizing) {
-  //   // setWidth("w-1/12");
-  //   setRotate("rotate-180");
-  //   // setFirst(!first);
-  //   // setSecond(!second);
-  // }
+  const location = useLocation();
+  const currentPage = location.pathname.substring(1); // Remove leading slash
 
-  // sizing && setRotate("rotate-180");
-  // function sizeFunc() {
-  //   setsizing((f) => !f);
-  // }
+  useEffect(() => {
+    // Update URL when page changes
+    console.log(currentPage);
+    // ...
+  }, [currentPage]);
+
   return (
     <>
       {!sizing && (
@@ -44,31 +43,65 @@ export const SideNav = () => {
               </NavLink>
             </div>
             <ul className="menu-list text-white flex flex-col text-xl pt-11">
-              <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight: currentPage === "" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "" ? " #370667" : "",
+                }}
+                className=" p-4   hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="/">
                   <MdExplore className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Explore</p>
                 </NavLink>
               </li>
-              <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Albums" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "Albums" ? " #370667" : "",
+                }}
+                className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="./Albums">
                   <IoIosAlbums className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Albums</p>
                 </NavLink>
               </li>
-              <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Artists" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "Artists" ? " #370667" : "",
+                }}
+                className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="./Artists">
                   <FaArtstation className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Artists</p>
                 </NavLink>
               </li>
-              <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Genres" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "Genres" ? " #370667" : "",
+                }}
+                className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-middle" to="./Genres">
                   <GiRegeneration className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Genres</p>
                 </NavLink>
               </li>
-              <li className="last-list  p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Stations" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "Stations" ? " #370667" : "",
+                }}
+                className="last-list  p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="./Stations">
                   <IoRadioSharp className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Stations</p>
@@ -76,14 +109,30 @@ export const SideNav = () => {
               </li>
             </ul>
             <ul className="menu-list text-white flex flex-col text-xl pt-11">
-              <li className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Downloads" ? "6px solid #9333EA" : "",
+                  backgroundColor:
+                    currentPage === "Downloads" ? " #370667" : "",
+                }}
+                className=" p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="/Downloads">
                   <FaDownload className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Downloads</p>
                 </NavLink>
               </li>
 
-              <li className="last-list p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Favourites" ? "6px solid #9333EA" : "",
+                  backgroundColor:
+                    currentPage === "Favourites" ? " #370667" : "",
+                }}
+                className="last-list p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink
                   className="flex  gap-5  align-center"
                   to="./Favourites"
@@ -94,7 +143,14 @@ export const SideNav = () => {
               </li>
             </ul>
             <ul className="menu-list text-white flex flex-col text-xl pt-11">
-              <li className="last-list  p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Playlist" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "Playlist" ? " #370667" : "",
+                }}
+                className="last-list  p-4  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="./Playlist">
                   <PiPlaylistFill className="  xl:mt-1 xl:ml-3 lg:hidden xl:block" />
                   <p> Playlist</p>
@@ -120,40 +176,90 @@ export const SideNav = () => {
               </NavLink>
             </div>
             <ul className="menu-list text-white flex flex-col text-lg pt-11">
-              <li className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight: currentPage === "" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "" ? " #370667" : "",
+                }}
+                className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="/">
                   <MdExplore className="  text-2xl " />
                 </NavLink>
               </li>
-              <li className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Albums" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "Albums" ? " #370667" : "",
+                }}
+                className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="./Albums">
                   <IoIosAlbums className="  text-2xl " />
                 </NavLink>
               </li>
-              <li className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Artists" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "Artists" ? " #370667" : "",
+                }}
+                className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="./Artists">
                   <FaArtstation className="  text-2xl " />
                 </NavLink>
               </li>
-              <li className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Genres" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "Genres" ? " #370667" : "",
+                }}
+                className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-middle" to="./Genres">
                   <GiRegeneration className="  text-2xl " />
                 </NavLink>
               </li>
-              <li className="last-list  p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Stations" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "Stations" ? " #370667" : "",
+                }}
+                className="last-list  p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="./Stations">
                   <IoRadioSharp className="  text-2xl " />
                 </NavLink>
               </li>
             </ul>
             <ul className="menu-list text-white flex flex-col text-lg pt-11">
-              <li className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Downloads" ? "6px solid #9333EA" : "",
+                  backgroundColor:
+                    currentPage === "Downloads" ? " #370667" : "",
+                }}
+                className=" p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="/Downloads">
                   <FaDownload className="  text-2x l" />
                 </NavLink>
               </li>
 
-              <li className="last-list p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Favourites" ? "6px solid #9333EA" : "",
+                  backgroundColor:
+                    currentPage === "Favourites" ? " #370667" : "",
+                }}
+                className="last-list p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink
                   className="flex  gap-5  align-center"
                   to="./Favourites"
@@ -163,7 +269,14 @@ export const SideNav = () => {
               </li>
             </ul>
             <ul className="menu-list text-white flex flex-col text-lg pt-11">
-              <li className="last-list  p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900">
+              <li
+                style={{
+                  borderRight:
+                    currentPage === "Playlist" ? "6px solid #9333EA" : "",
+                  backgroundColor: currentPage === "Playlist" ? " #370667" : "",
+                }}
+                className="last-list  p-4 flex  justify-center  hover:border-e-8 hover:border-e-purple-600 hover:bg-purple-900 focus:bg-purple-900   active:bg-purple-900"
+              >
                 <NavLink className="flex  gap-5  align-center" to="./Playlist">
                   <PiPlaylistFill className="  text-2xl " />
                 </NavLink>

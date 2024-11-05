@@ -244,9 +244,7 @@ export default function Explore() {
                         </div>
                       )}
                     </div>
-                    <p className="text-lg mt-4  text-gray-200">
-                      {mdata.artist}
-                    </p>
+                    <p className="text-lg mt-4  text-gray-200">{mdata.title}</p>
                   </SwiperSlide>
                 )
             )}

@@ -42,8 +42,8 @@ export default function Genres() {
       <Header />
       <div className="genres p-8 text-white">
         <h1 className="text-white text-2xl mb-6">Top Genres</h1>
-        <div className="row flex flex-col lg:flex-row gap-8 mb-8">
-          <div className="lg:w-2/6">
+        <div className="row flex flex-col xl:flex-row gap-8 mb-8">
+          <div className="xl:w-2/6">
             <div
               style={{ height: "60vh" }}
               className="relative cursor-pointer w-full overflow-hidden"
@@ -59,7 +59,7 @@ export default function Genres() {
               <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                 {" "}
                 <img
-                  className="absolute top-1/2  left-1/2 lg:left-56"
+                  className="absolute top-1/2  left-1/2 xl:left-56"
                   src={play}
                   alt=""
                 />
@@ -70,7 +70,7 @@ export default function Genres() {
               </div>
             </div>
           </div>
-          <div className="lg:w-3/6 flex flex-col gap-8">
+          <div className="xl:w-3/6 flex flex-col gap-8">
             <div className="row flex  flex-col md:flex-row gap-8">
               <div className="md:w-1/3">
                 <div className="relative cursor-pointer w-full h-64 overflow-hidden">
@@ -87,7 +87,7 @@ export default function Genres() {
                   <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                     {" "}
                     <img
-                      className="absolute top-1/2 left-24"
+                      className="absolute top-1/2 left-1/2 xl:left-24"
                       src={play}
                       alt=""
                     />
@@ -115,7 +115,7 @@ export default function Genres() {
                   <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                     {" "}
                     <img
-                      className="absolute top-1/2 left-1/2 md:left-52"
+                      className="absolute top-1/2 left-1/2 xl:left-52"
                       src={play}
                       alt=""
                     />
@@ -143,7 +143,7 @@ export default function Genres() {
                   <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                     {" "}
                     <img
-                      className="absolute top-1/2 left-1/2 md:left-56"
+                      className="absolute top-1/2 left-1/2 xl:left-56"
                       src={play}
                       alt=""
                     />
@@ -171,7 +171,7 @@ export default function Genres() {
                   <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                     {" "}
                     <img
-                      className="absolute top-1/2 left-24"
+                      className="absolute top-1/2 left-1/2 xl:left-24"
                       src={play}
                       alt=""
                     />
@@ -186,7 +186,7 @@ export default function Genres() {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/6">
+          <div className="xl:w-1/6">
             <div
               style={{ height: "60vh" }}
               className="relative cursor-pointer w-full overflow-hidden"
@@ -202,7 +202,7 @@ export default function Genres() {
               <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                 {" "}
                 <img
-                  className="absolute top-1/2 left-1/2 lg:left-28"
+                  className="absolute top-1/2 left-1/2 xl:left-28"
                   src={play}
                   alt=""
                 />
@@ -214,8 +214,8 @@ export default function Genres() {
             </div>
           </div>
         </div>
-        <div className="row flex flex-col lg:flex-row gap-8">
-          <div className="lg:w-3/6 flex flex-col gap-8">
+        <div className="row flex flex-col xl:flex-row gap-8">
+          <div className="xl:w-3/6 flex flex-col gap-8">
             <div className="row flex  flex-col md:flex-row gap-8">
               <div className="md:w-1/3">
                 <div className="relative cursor-pointer w-full h-64 overflow-hidden">
@@ -232,7 +232,7 @@ export default function Genres() {
                   <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                     {" "}
                     <img
-                      className="absolute top-1/2 left-24"
+                      className="absolute top-1/2 left-1/2 xl:left-24"
                       src={play}
                       alt=""
                     />
@@ -260,7 +260,7 @@ export default function Genres() {
                   <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                     {" "}
                     <img
-                      className="absolute top-1/2 left-56"
+                      className="absolute top-1/2 left-1/2 xl:left-56"
                       src={play}
                       alt=""
                     />
@@ -288,7 +288,7 @@ export default function Genres() {
                   <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                     {" "}
                     <img
-                      className="absolute top-1/2 left-1/2 md:left-24"
+                      className="absolute top-1/2 left-1/2 lg:left-24"
                       src={play}
                       alt=""
                     />
@@ -314,7 +314,7 @@ export default function Genres() {
                   <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                     {" "}
                     <img
-                      className="absolute top-1/2 left-24"
+                      className="absolute top-1/2  left-1/2 lg:left-24"
                       src={play}
                       alt=""
                     />
@@ -342,7 +342,7 @@ export default function Genres() {
                   <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                     {" "}
                     <img
-                      className="absolute top-1/2 left-24"
+                      className="absolute top-1/2  left-1/2 lg:left-24"
                       src={play}
                       alt=""
                     />
@@ -358,7 +358,7 @@ export default function Genres() {
             </div>
           </div>
 
-          <div className="lg:w-1/6">
+          <div className="xl:w-1/6">
             <div
               style={{ height: "60vh" }}
               className="relative cursor-pointer w-full overflow-hidden"
@@ -385,7 +385,7 @@ export default function Genres() {
               </div>
             </div>
           </div>
-          <div className="lg:w-2/6">
+          <div className="xl:w-2/6">
             <div
               style={{ height: "60vh" }}
               className="relative cursor-pointer w-full overflow-hidden"
@@ -401,7 +401,7 @@ export default function Genres() {
               <div className="absolute rounded-xl px-5 pb-3 bg-gradient-to-t from-purple-900 to-indigo-000 via-blue-000 inset-0 flex justify-between items-end z-20 opacity-0 transition-opacity duration-300 hover:opacity-100">
                 {" "}
                 <img
-                  className="absolute top-1/2 left-1/2 lg:left-56"
+                  className="absolute top-1/2 left-1/2 xl:left-56"
                   src={play}
                   alt=""
                 />
